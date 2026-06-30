@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.png" alt="Drool banner" width="60%">
+  <img src="banner.png" alt="Drool banner" width="35%">
 </p>
 
 # Drool
