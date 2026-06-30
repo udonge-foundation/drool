@@ -1,0 +1,116 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@industry/runtime": [
+        "packages/runtime/src/index.ts",
+        "packages/runtime/index.ts"
+      ],
+      "@industry/runtime/*": [
+        "packages/runtime/src/*",
+        "packages/runtime/*"
+      ],
+      "@industry/common": [
+        "packages/common/src/index.ts",
+        "packages/common/index.ts"
+      ],
+      "@industry/common/*": [
+        "packages/common/src/*",
+        "packages/common/*"
+      ],
+      "@industry/daemon-client": [
+        "packages/daemon-client/src/index.ts",
+        "packages/daemon-client/index.ts"
+      ],
+      "@industry/daemon-client/*": [
+        "packages/daemon-client/src/*",
+        "packages/daemon-client/*"
+      ],
+      "@industry/daemon-core": [
+        "packages/daemon-core/src/index.ts",
+        "packages/daemon-core/index.ts"
+      ],
+      "@industry/daemon-core/*": [
+        "packages/daemon-core/src/*",
+        "packages/daemon-core/*"
+      ],
+      "@industry/drool-core": [
+        "packages/drool-core/src/index.ts",
+        "packages/drool-core/index.ts"
+      ],
+      "@industry/drool-core/*": [
+        "packages/drool-core/src/*",
+        "packages/drool-core/*"
+      ],
+      "@industry/drool-sdk": [
+        "packages/drool-sdk/src/index.ts",
+        "packages/drool-sdk/index.ts"
+      ],
+      "@industry/drool-sdk/*": [
+        "packages/drool-sdk/src/*",
+        "packages/drool-sdk/*"
+      ],
+      "@industry/drool-sdk-ext": [
+        "packages/drool-sdk-ext/src/index.ts",
+        "packages/drool-sdk-ext/index.ts"
+      ],
+      "@industry/drool-sdk-ext/*": [
+        "packages/drool-sdk-ext/src/*",
+        "packages/drool-sdk-ext/*"
+      ],
+      "@industry/environment": [
+        "packages/environment/src/index.ts",
+        "packages/environment/index.ts"
+      ],
+      "@industry/environment/*": [
+        "packages/environment/src/*",
+        "packages/environment/*"
+      ],
+      "@industry/logging": [
+        "packages/logging/src/index.ts",
+        "packages/logging/index.ts"
+      ],
+      "@industry/logging/*": [
+        "packages/logging/src/*",
+        "packages/logging/*"
+      ],
+      "@industry/updater": [
+        "packages/updater/src/index.ts",
+        "packages/updater/index.ts"
+      ],
+      "@industry/updater/*": [
+        "packages/updater/src/*",
+        "packages/updater/*"
+      ],
+      "@industry/utils": [
+        "packages/utils/src/index.ts",
+        "packages/utils/index.ts"
+      ],
+      "@industry/utils/*": [
+        "packages/utils/src/*",
+        "packages/utils/*"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "packages",
+    "node_modules"
+  ]
+}

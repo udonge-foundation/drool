@@ -1,0 +1,1 @@
+export const MAX_STRUCTURED_OUTPUT_RETRIES = 2;

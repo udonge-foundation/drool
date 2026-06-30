@@ -1,0 +1,1 @@
+export const MAX_FIRST_USER_MESSAGE_TITLE_LENGTH = 25;

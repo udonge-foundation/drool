@@ -1,0 +1,11 @@
+export const SQUAD_SESSION_TAG = 'squad-session';
+export const SQUAD_BOARD_TOOL_ID = 'squad-board';
+export const SQUAD_GENERAL_CHANNEL = 'general';
+export const SQUAD_USER_PARTICIPANT_ID = 'user';
+export const SQUAD_USER_PARTICIPANT_LABEL = 'You';
+export const SQUAD_NOTIFICATION_POLL_INTERVAL_MS = 500;
+export const SQUAD_WAIT_TIMEOUT_SECONDS = 120;
+export const SQUAD_ORCHESTRATOR_WAKEUP_INTERVAL_MS = 5 * 60 * 1000;
+export const SQUAD_WAKEUP_HEARTBEAT_STALE_MS =
+  SQUAD_ORCHESTRATOR_WAKEUP_INTERVAL_MS + 60 * 1000;
+export const SQUAD_AGENT_INACTIVITY_TIMEOUT_MS = 24 * 60 * 60 * 1000;

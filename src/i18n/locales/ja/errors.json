@@ -1,0 +1,73 @@
+{
+  "operationCancelled": "操作がキャンセルされました",
+  "ls": {
+    "notFound": "ディレクトリにアクセスできません - パスを確認してください",
+    "permissionDenied": "アクセスが制限されています - 権限を確認してください",
+    "notADirectory": "パスはディレクトリではありません - 対象を確認してください",
+    "invalid": "無効なパス形式です - 絶対パスを使用してください",
+    "noSuchFile": "ディレクトリが見つかりません - パスを確認してください"
+  },
+  "create": {
+    "alreadyExists": "ファイルは既に存在します - Editツールで変更してください",
+    "permissionDenied": "ファイルを作成できません - ディレクトリの権限を確認してください",
+    "noSuchFileOrDirectory": "無効なパスです - 親ディレクトリの存在を確認してください",
+    "isADirectory": "対象はディレクトリです - ファイルパスを指定してください",
+    "readOnly": "ファイルシステムは読み取り専用です - 権限を確認してください"
+  },
+  "edit": {
+    "textNotFound": "テキストパターンが見つかりません - 完全一致を確認してください",
+    "notFound": "ファイルが見つかりません - パスを確認するか作成してください",
+    "noMatchFound": "テキストパターンが見つかりません - 完全一致を確認してください",
+    "multipleMatches": "複数の一致が見つかりました - パターンをより具体的にしてください",
+    "permissionDenied": "ファイルを変更できません - 権限を確認してください",
+    "isADirectory": "対象はディレクトリです - ファイルのみ編集できます"
+  },
+  "applyPatch": {
+    "invalidPatch": "無効なパッチ形式です - 構文を確認してください",
+    "fileNotFound": "対象ファイルが見つかりません - パスを確認してください",
+    "patchFailed": "パッチが一致しません - ファイルが変更された可能性があります",
+    "hunkFailed": "パッチが部分的に失敗しました - 内容が変更されています",
+    "permissionDenied": "ファイルを変更できません - 権限を確認してください"
+  },
+  "generic": {
+    "permissionDenied": "アクセスが制限されています - 権限を確認して再試行してください",
+    "notFound": "対象が見つかりません - パスを確認して再試行してください",
+    "alreadyExists": "対象は既に存在します - 別の名前を選択してください",
+    "invalid": "操作に失敗しました - パラメータを確認して再試行してください",
+    "unsuccessful": "操作が完了しませんでした - アプローチを調整しています"
+  },
+  "rewindFailed": "エラー: リワインドセッションの準備に失敗しました。",
+  "skillSessionFailed": "エラー: スキルセッションの作成に失敗しました",
+  "requestAborted": "エラー: リクエストが中止されました。",
+  "noSessionsFound": "エラー: 現在のディレクトリにセッションが見つかりません。特定のセッションを再開するには --resume <sessionId> を使用してください。",
+  "agent": {
+    "errorPrefix": "エラー: {{message}}",
+    "initFailed": "エラー: LLMクライアントの初期化に失敗しました",
+    "overloaded": "AIモデルプロバイダーが現在過負荷状態です。しばらくしてからリトライするか、モデルを切り替えてください。",
+    "contentModeration": "プロバイダーの安全性チェックによりリクエストがブロックされました。リクエストを修正し、高リスクなサイバー活動の指示を避けてください。",
+    "networkError": "エラー: {{message}}\n\nネットワークの問題の可能性があります。以下を確認してください:\n1. インターネット接続\n2. ファイアウォールやプロキシの設定",
+    "networkInfrastructureError": "{{host}} に接続できません。ネットワーク接続を確認してから再試行してください。",
+    "networkConnectionError": "{{host}} に接続できません。インターネット接続がオフラインまたは中断されている可能性があります。ネットワーク接続を確認してから再試行してください。",
+    "networkFirewallError": "{{host}} に接続できません。ネットワークが接続をブロックしているようです。企業ネットワークを使用している場合は、IT チームに確認してください。",
+    "networkTlsCertificateError": "{{host}} への安全な接続を確立できません。SSL インスペクションまたは証明書設定の問題が原因の可能性があります。",
+    "networkEndpointFallback": "AI モデルのエンドポイント",
+    "byokError400": "BYOKエラー: {{message}}{{detailSuffix}}\n\nカスタムモデルのトラブルシューティング:\n1. BYOKコンフィグの\"provider\"タイプがエンドポイントと一致していることを確認してください（GPT-4o/GPT-5+/oシリーズ/Codexには\"openai\"、Claudeには\"anthropic\"、その他のOpenAI互換APIには\"generic-chat-completion-api\"を使用）\n2. baseUrlが到達可能で、APIキーが有効であることを確認してください\n3. モデル名がエンドポイントの期待値と一致していることを確認してください",
+    "byokErrorMcpToolSchema": "BYOKエラー: {{message}}{{detailSuffix}}\n\nモデルプロバイダーが MCP ツールの JSON Schema を拒否しました。接続中の MCP サーバー: {{serverNames}}。\n\n互換性のないサーバーは `/mcp` で無効にするか、`/model` で互換性のあるモデルに切り替えてください。",
+    "byokError402": "BYOKエラー: {{errorMessage}}{{detailSuffix}}\n\n BYOKモデルプロバイダーの課金状況を確認してください。",
+    "byokErrorGeneric": "BYOKエラー: {{message}}{{detailSuffix}}\n\n問題が続く場合は、設定でカスタムモデルの構成を確認してください。",
+    "apiValidationErrorSpecific": "APIバリデーションエラー: {{detail}}\n\nこれは通常、会話履歴の構造に問題があることを意味します。ツール結果が対応するツール呼び出しと一致しない場合に発生することがあります。/bug でこのエラーを報告してください。",
+    "apiValidationErrorGeneric": "APIバリデーションエラー: {{message}}\n\nリクエスト形式に問題がありました。/bug でこのエラーを報告してください。",
+    "tokenLimitReachedDetail": "{{detail}}\n`/limits` を実行して設定を管理してください。",
+    "toolExecutionError": "エラー: {{message}}",
+    "compactFailed": "エラー: セッションの圧縮と新規セッションの開始に失敗しました。\n\n{{detail}}",
+    "sessionNotFound": "エラー: セッションが見つかりません: {{sessionId}}",
+    "warningSessionDir": "警告: セッションディレクトリに変更できませんでした: {{dir}}",
+    "warningPromptIgnored": "警告: セッション再開時に初期プロンプトは無視されました。",
+    "authError": "エラー: {{message}}",
+    "invalidModel": "無効なモデル: {{input}}\n\n利用可能な組み込みモデル:\n  {{builtIn}}\n\n利用可能なカスタムモデル:\n  {{custom}}\n\n注: カスタムモデルは ~/.industry/settings.json から読み込まれます",
+    "invalidModelNoCustom": "無効なモデル: {{input}}\n\n利用可能な組み込みモデル:\n  {{builtIn}}\n\nカスタムモデルが設定されていません。~/.industry/settings.json に追加してください",
+    "modelsNone": "なし",
+    "byokOpenAIMismatch": "カスタムモデル「{{model}}」はOpenAIモデルのようですが、プロバイダー「{{provider}}」で設定されています。GPT-5+、GPT-4o、oシリーズ、Codexモデルの場合は、\"provider\": \"openai\"（Responses API）を使用してください。詳細は https://docs.example.com/cli/byok/overview をご覧ください。",
+    "byokAnthropicMismatch": "カスタムモデル「{{model}}」はClaude/Anthropicモデルのようですが、プロバイダー「{{provider}}」で設定されています。Claudeモデル（Haiku、Sonnet、Opus）の場合は、\"provider\": \"anthropic\"を使用してください。詳細は https://docs.example.com/cli/byok/overview をご覧ください。"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "operationCancelled": "操作已取消",
+  "ls": {
+    "notFound": "无法访问目录 - 请检查路径后重试",
+    "permissionDenied": "访问受限 - 请检查权限",
+    "notADirectory": "路径不是目录 - 请验证目标",
+    "invalid": "路径格式无效 - 请使用绝对路径",
+    "noSuchFile": "目录不存在 - 请验证路径"
+  },
+  "create": {
+    "alreadyExists": "文件已存在 - 请使用Edit工具修改",
+    "permissionDenied": "无法创建文件 - 请检查目录权限",
+    "noSuchFileOrDirectory": "路径无效 - 请检查父目录是否存在",
+    "isADirectory": "目标是目录 - 请指定文件路径",
+    "readOnly": "文件系统为只读 - 请检查权限"
+  },
+  "edit": {
+    "textNotFound": "未找到文本模式 - 请验证完全匹配",
+    "notFound": "文件未找到 - 请检查路径或先创建文件",
+    "noMatchFound": "未找到文本模式 - 请验证完全匹配",
+    "multipleMatches": "找到多个匹配项 - 请使模式更具体",
+    "permissionDenied": "无法修改文件 - 请检查权限",
+    "isADirectory": "目标是目录 - 只能编辑文件"
+  },
+  "applyPatch": {
+    "invalidPatch": "补丁格式无效 - 请检查语法",
+    "fileNotFound": "目标文件未找到 - 请验证路径",
+    "patchFailed": "补丁不匹配 - 文件可能已更改",
+    "hunkFailed": "补丁部分失败 - 内容已更改",
+    "permissionDenied": "无法修改文件 - 请检查权限"
+  },
+  "generic": {
+    "permissionDenied": "访问受限 - 请检查权限后重试",
+    "notFound": "未找到目标 - 请验证路径后重试",
+    "alreadyExists": "目标已存在 - 请选择其他名称",
+    "invalid": "操作失败 - 请检查参数后重试",
+    "unsuccessful": "操作未成功 - 正在调整方案"
+  },
+  "rewindFailed": "错误：回退会话准备失败。",
+  "skillSessionFailed": "错误：创建技能会话失败",
+  "requestAborted": "错误：请求已中止。",
+  "noSessionsFound": "错误：当前目录未找到会话。使用 --resume <sessionId> 恢复特定会话。",
+  "agent": {
+    "errorPrefix": "错误：{{message}}",
+    "initFailed": "错误：LLM 客户端初始化失败",
+    "overloaded": "上游 AI 模型提供商当前过载。请稍后重试或切换模型。",
+    "contentModeration": "请求被提供商安全检查阻止。请修改您的请求，避免高风险网络活动指令。",
+    "networkError": "错误：{{message}}\n\n这可能是网络问题。请检查：\n1. 您的网络连接\n2. 防火墙或代理设置",
+    "networkInfrastructureError": "无法连接到 {{host}}。请检查网络连接后重试。",
+    "networkConnectionError": "无法连接到 {{host}}。您的互联网连接可能已离线或中断。请检查网络连接后重试。",
+    "networkFirewallError": "无法连接到 {{host}}。您的网络似乎正在阻止此连接。如果您在企业网络中，请联系 IT 团队。",
+    "networkTlsCertificateError": "无法与 {{host}} 建立安全连接。这可能是由 SSL 检查或证书配置问题导致的。",
+    "networkEndpointFallback": "AI 模型端点",
+    "byokError400": "BYOK 错误：{{message}}{{detailSuffix}}\n\n自定义模型排查提示：\n1. 确认 BYOK 配置中的 \"provider\" 类型与端点匹配（GPT-4o/GPT-5+/o 系列/Codex 使用 \"openai\"，Claude 使用 \"anthropic\"，其他 OpenAI 兼容 API 使用 \"generic-chat-completion-api\"）\n2. 确保 baseUrl 可访问且 API 密钥有效\n3. 确认模型名称与端点预期一致",
+    "byokErrorMcpToolSchema": "BYOK 错误：{{message}}{{detailSuffix}}\n\n模型提供商拒绝了 MCP 工具的 JSON Schema。已连接的 MCP 服务器：{{serverNames}}。\n\n请使用 `/mcp` 禁用不兼容的服务器，或使用 `/model` 切换到兼容的模型。",
+    "byokError402": "BYOK错误: {{errorMessage}}{{detailSuffix}}\n\n 请检查您的BYOK模型提供商的计费状态。",
+    "byokErrorGeneric": "BYOK 错误：{{message}}{{detailSuffix}}\n\n如果问题持续，请在设置中验证自定义模型配置。",
+    "apiValidationErrorSpecific": "API 验证错误：{{detail}}\n\n这通常意味着对话历史结构存在问题。当工具结果与对应的工具调用不匹配时可能发生此错误。请使用 /bug 报告此错误。",
+    "apiValidationErrorGeneric": "API 验证错误：{{message}}\n\n请求格式存在问题。请使用 /bug 报告此错误。",
+    "tokenLimitReachedDetail": "{{detail}}\n运行 `/limits` 管理您的偏好设置。",
+    "toolExecutionError": "错误：{{message}}",
+    "compactFailed": "错误：压缩并启动新会话失败。\n\n{{detail}}",
+    "sessionNotFound": "错误：未找到会话：{{sessionId}}",
+    "warningSessionDir": "警告：无法切换到会话目录：{{dir}}",
+    "warningPromptIgnored": "警告：恢复会话时忽略了初始提示。",
+    "authError": "错误：{{message}}",
+    "invalidModel": "无效模型: {{input}}\n\n可用的内置模型:\n  {{builtIn}}\n\n可用的自定义模型:\n  {{custom}}\n\n注意: 自定义模型从 ~/.industry/settings.json 加载",
+    "invalidModelNoCustom": "无效模型: {{input}}\n\n可用的内置模型:\n  {{builtIn}}\n\n未配置自定义模型。请在 ~/.industry/settings.json 中添加",
+    "modelsNone": "无",
+    "byokOpenAIMismatch": "您的自定义模型「{{model}}」似乎是 OpenAI 模型，但配置的提供商为「{{provider}}」。对于 GPT-5+、GPT-4o、o 系列和 Codex 模型，请使用 \"provider\": \"openai\"（Responses API）。详情请参阅 https://docs.example.com/cli/byok/overview。",
+    "byokAnthropicMismatch": "您的自定义模型「{{model}}」似乎是 Claude/Anthropic 模型，但配置的提供商为「{{provider}}」。对于 Claude 模型（Haiku、Sonnet、Opus），请使用 \"provider\": \"anthropic\"。详情请参阅 https://docs.example.com/cli/byok/overview。"
+  }
+}

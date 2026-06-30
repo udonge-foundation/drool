@@ -1,0 +1,73 @@
+{
+  "operationCancelled": "작업이 취소되었습니다",
+  "ls": {
+    "notFound": "디렉토리에 접근할 수 없습니다 - 경로를 확인하세요",
+    "permissionDenied": "접근이 제한되었습니다 - 권한을 확인하세요",
+    "notADirectory": "경로가 디렉토리가 아닙니다 - 대상을 확인하세요",
+    "invalid": "잘못된 경로 형식입니다 - 절대 경로를 사용하세요",
+    "noSuchFile": "디렉토리를 찾을 수 없습니다 - 경로를 확인하세요"
+  },
+  "create": {
+    "alreadyExists": "파일이 이미 존재합니다 - Edit 도구로 수정하세요",
+    "permissionDenied": "파일을 생성할 수 없습니다 - 디렉토리 권한을 확인하세요",
+    "noSuchFileOrDirectory": "잘못된 경로입니다 - 상위 디렉토리가 존재하는지 확인하세요",
+    "isADirectory": "대상이 디렉토리입니다 - 파일 경로를 지정하세요",
+    "readOnly": "파일 시스템이 읽기 전용입니다 - 권한을 확인하세요"
+  },
+  "edit": {
+    "textNotFound": "텍스트 패턴을 찾을 수 없습니다 - 정확한 일치를 확인하세요",
+    "notFound": "파일을 찾을 수 없습니다 - 경로를 확인하거나 먼저 생성하세요",
+    "noMatchFound": "텍스트 패턴을 찾을 수 없습니다 - 정확한 일치를 확인하세요",
+    "multipleMatches": "여러 일치 항목이 발견되었습니다 - 패턴을 더 구체적으로 지정하세요",
+    "permissionDenied": "파일을 수정할 수 없습니다 - 권한을 확인하세요",
+    "isADirectory": "대상이 디렉토리입니다 - 파일만 편집 가능합니다"
+  },
+  "applyPatch": {
+    "invalidPatch": "잘못된 패치 형식입니다 - 구문을 확인하세요",
+    "fileNotFound": "대상 파일을 찾을 수 없습니다 - 경로를 확인하세요",
+    "patchFailed": "패치가 일치하지 않습니다 - 파일이 변경되었을 수 있습니다",
+    "hunkFailed": "패치가 부분적으로 실패했습니다 - 내용이 변경되었습니다",
+    "permissionDenied": "파일을 수정할 수 없습니다 - 권한을 확인하세요"
+  },
+  "generic": {
+    "permissionDenied": "접근이 제한되었습니다 - 권한을 확인한 후 다시 시도하세요",
+    "notFound": "대상을 찾을 수 없습니다 - 경로를 확인한 후 다시 시도하세요",
+    "alreadyExists": "대상이 이미 존재합니다 - 다른 이름을 선택하세요",
+    "invalid": "작업에 실패했습니다 - 매개변수를 확인한 후 다시 시도하세요",
+    "unsuccessful": "작업이 완료되지 않았습니다 - 접근 방식을 조정하고 있습니다"
+  },
+  "rewindFailed": "오류: 되감기 세션을 준비하지 못했습니다.",
+  "skillSessionFailed": "오류: 스킬 세션을 생성하지 못했습니다",
+  "requestAborted": "오류: 요청이 중단되었습니다.",
+  "noSessionsFound": "오류: 현재 디렉토리에서 세션을 찾을 수 없습니다. --resume <sessionId>를 사용하여 특정 세션을 재개하세요.",
+  "agent": {
+    "errorPrefix": "오류: {{message}}",
+    "initFailed": "오류: LLM 클라이언트 초기화에 실패했습니다",
+    "overloaded": "업스트림 AI 모델 제공자가 현재 과부하 상태입니다. 잠시 후 다시 시도하거나 모델을 전환하세요.",
+    "contentModeration": "제공자 안전 검사에 의해 요청이 차단되었습니다. 요청을 수정하고 고위험 사이버 활동 지시를 피하세요.",
+    "networkError": "오류: {{message}}\n\n네트워크 문제일 수 있습니다. 확인하세요:\n1. 인터넷 연결\n2. 방화벽 또는 프록시 설정",
+    "networkInfrastructureError": "{{host}}에 연결할 수 없습니다. 네트워크 연결을 확인한 후 다시 시도하세요.",
+    "networkConnectionError": "{{host}}에 연결할 수 없습니다. 인터넷 연결이 오프라인이거나 중단되었을 수 있습니다. 네트워크 연결을 확인한 후 다시 시도하세요.",
+    "networkFirewallError": "{{host}}에 연결할 수 없습니다. 네트워크가 연결을 차단하는 것 같습니다. 회사 네트워크를 사용하는 경우 IT 팀에 문의하세요.",
+    "networkTlsCertificateError": "{{host}}에 보안 연결을 설정할 수 없습니다. SSL 검사 또는 인증서 구성 문제로 인해 발생했을 수 있습니다.",
+    "networkEndpointFallback": "AI 모델 엔드포인트",
+    "byokError400": "BYOK 오류: {{message}}{{detailSuffix}}\n\n사용자 지정 모델 문제 해결 팁:\n1. BYOK 구성의 \"provider\" 유형이 엔드포인트와 일치하는지 확인 (GPT-4o/GPT-5+/o-시리즈/Codex는 \"openai\", Claude는 \"anthropic\", 기타 OpenAI 호환 API는 \"generic-chat-completion-api\" 사용)\n2. baseUrl에 접근 가능하고 API 키가 유효한지 확인\n3. 모델 이름이 엔드포인트에서 기대하는 것과 일치하는지 확인",
+    "byokErrorMcpToolSchema": "BYOK 오류: {{message}}{{detailSuffix}}\n\n모델 제공자가 MCP 도구의 JSON Schema를 거부했습니다. 연결된 MCP 서버: {{serverNames}}.\n\n호환되지 않는 서버는 `/mcp`로 비활성화하거나 `/model`로 호환 모델로 전환하세요.",
+    "byokError402": "BYOK 오류: {{errorMessage}}{{detailSuffix}}\n\n BYOK 모델 제공업체의 결제 상태를 확인해 주세요.",
+    "byokErrorGeneric": "BYOK 오류: {{message}}{{detailSuffix}}\n\n이 문제가 지속되면 설정에서 사용자 지정 모델 구성을 확인하세요.",
+    "apiValidationErrorSpecific": "API 유효성 검사 오류: {{detail}}\n\n보통 대화 기록 구조에 문제가 있음을 의미합니다. 도구 결과가 해당 도구 호출과 일치하지 않을 때 발생할 수 있습니다. /bug로 이 오류를 보고하세요.",
+    "apiValidationErrorGeneric": "API 유효성 검사 오류: {{message}}\n\n요청 형식에 문제가 있었습니다. /bug로 이 오류를 보고하세요.",
+    "tokenLimitReachedDetail": "{{detail}}\n`/limits`를 실행하여 설정을 관리하세요.",
+    "toolExecutionError": "오류: {{message}}",
+    "compactFailed": "오류: 세션을 압축하고 새 세션을 시작하지 못했습니다.\n\n{{detail}}",
+    "sessionNotFound": "오류: 세션을 찾을 수 없습니다: {{sessionId}}",
+    "warningSessionDir": "경고: 세션 디렉토리로 변경할 수 없습니다: {{dir}}",
+    "warningPromptIgnored": "경고: 세션 재개 시 초기 프롬프트가 무시되었습니다.",
+    "authError": "오류: {{message}}",
+    "invalidModel": "잘못된 모델: {{input}}\n\n사용 가능한 내장 모델:\n  {{builtIn}}\n\n사용 가능한 사용자 지정 모델:\n  {{custom}}\n\n참고: 사용자 지정 모델은 ~/.industry/settings.json에서 로드됩니다",
+    "invalidModelNoCustom": "잘못된 모델: {{input}}\n\n사용 가능한 내장 모델:\n  {{builtIn}}\n\n사용자 지정 모델이 구성되지 않았습니다. ~/.industry/settings.json에 추가하세요",
+    "modelsNone": "없음",
+    "byokOpenAIMismatch": "사용자 지정 모델 \"{{model}}\"은(는) OpenAI 모델인 것 같지만 프로바이더 \"{{provider}}\"로 구성되어 있습니다. GPT-5+, GPT-4o, o-시리즈, Codex 모델의 경우 \"provider\": \"openai\"(Responses API)를 사용하세요. 자세한 내용은 https://docs.example.com/cli/byok/overview를 참조하세요.",
+    "byokAnthropicMismatch": "사용자 지정 모델 \"{{model}}\"은(는) Claude/Anthropic 모델인 것 같지만 프로바이더 \"{{provider}}\"로 구성되어 있습니다. Claude 모델(Haiku, Sonnet, Opus)의 경우 \"provider\": \"anthropic\"을 사용하세요. 자세한 내용은 https://docs.example.com/cli/byok/overview를 참조하세요."
+  }
+}

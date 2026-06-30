@@ -1,0 +1,1 @@
+export { getExtractorOptionsByKind } from './registry';

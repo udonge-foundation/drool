@@ -1,0 +1,16 @@
+import {
+  LEGACY_INDUSTRY_API_VERSION as SHARED_LEGACY_INDUSTRY_API_VERSION,
+  JSONRPC_VERSION as SHARED_JSONRPC_VERSION,
+} from '../../shared/constants';
+
+export const INDUSTRY_PROTOCOL_VERSION = '1.97.0' as const;
+
+export const INDUSTRY_CLIENT_HEADER = 'X-Industry-Client';
+
+export const INDUSTRY_CLIENT_VERSION = 'X-Client-Version';
+
+export const ACTIVE_ORGANIZATION_HEADER = 'X-Industry-Org-Id';
+
+export const LEGACY_INDUSTRY_API_VERSION = SHARED_LEGACY_INDUSTRY_API_VERSION;
+
+export const JSONRPC_VERSION = SHARED_JSONRPC_VERSION;

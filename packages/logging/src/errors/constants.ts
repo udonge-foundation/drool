@@ -1,0 +1,28 @@
+import { HttpStatusCode } from './enums';
+
+export const HttpStatusTitle: Record<HttpStatusCode, string> = {
+  [HttpStatusCode.Ok]: 'OK',
+  [HttpStatusCode.Created]: 'Created',
+  [HttpStatusCode.Accepted]: 'Accepted',
+  [HttpStatusCode.NoContent]: 'No Content',
+  [HttpStatusCode.BadRequest]: 'Bad Request',
+  [HttpStatusCode.Unauthorized]: 'Unauthorized',
+  [HttpStatusCode.PaymentRequired]: 'Payment Required',
+  [HttpStatusCode.Forbidden]: 'Forbidden',
+  [HttpStatusCode.NotFound]: 'Not Found',
+  [HttpStatusCode.MethodNotAllowed]: 'Method Not Allowed',
+  [HttpStatusCode.Conflict]: 'Conflict',
+  [HttpStatusCode.Gone]: 'Gone',
+  [HttpStatusCode.ContentTooLarge]: 'Content Too Large',
+  [HttpStatusCode.InvalidData]: 'Invalid Data',
+  [HttpStatusCode.FailedDependency]: 'Failed Dependency',
+  [HttpStatusCode.PreconditionRequired]: 'Precondition Required',
+  [HttpStatusCode.RateLimitExceeded]: 'Rate Limit Exceeded',
+  [HttpStatusCode.UnavailableForLegalReasons]: 'Unavailable For Legal Reasons',
+  [HttpStatusCode.ClientClosedRequest]: 'Client Closed Request',
+  [HttpStatusCode.InternalServerError]: 'Internal Server Error',
+  [HttpStatusCode.NotImplemented]: 'Not Implemented',
+  [HttpStatusCode.BadGateway]: 'Bad Gateway',
+  [HttpStatusCode.ServiceUnavailable]: 'Service Unavailable',
+  [HttpStatusCode.GatewayTimeout]: 'Gateway Timeout',
+};

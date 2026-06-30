@@ -1,0 +1,73 @@
+{
+  "operationCancelled": "Operazione annullata",
+  "ls": {
+    "notFound": "Directory non accessibile: controlla il percorso e riprova",
+    "permissionDenied": "Accesso limitato: controlla i permessi",
+    "notADirectory": "Il percorso non è una directory: verificare la destinazione",
+    "invalid": "Formato percorso non valido: utilizzare percorsi assoluti",
+    "noSuchFile": "Directory non trovata: verificare che il percorso esista"
+  },
+  "create": {
+    "alreadyExists": "Il file esiste gixE0: utilizza lo strumento Modifica per modificare",
+    "permissionDenied": "Impossibile creare il file: verificare i permessi della directory",
+    "noSuchFileOrDirectory": "Percorso non valido: verificare che esista la directory principale",
+    "isADirectory": "La destinazione è una directory: specificare un percorso file",
+    "readOnly": "Il file system è di sola lettura: controlla le autorizzazioni"
+  },
+  "edit": {
+    "textNotFound": "Modello di testo non trovato: verificare la corrispondenza esatta",
+    "notFound": "File non trovato: controlla il percorso o crealo prima",
+    "noMatchFound": "Modello di testo non trovato: verificare la corrispondenza esatta",
+    "multipleMatches": "Trovate pixF9 corrispondenze: rendi il modello pixF9 specifico",
+    "permissionDenied": "Impossibile modificare il file: verificare i permessi",
+    "isADirectory": "La destinazione è una directory: modifica solo i file"
+  },
+  "applyPatch": {
+    "invalidPatch": "Formato patch non valido: controllare la sintassi",
+    "fileNotFound": "File di destinazione non trovato: verificare il percorso",
+    "patchFailed": "La patch non corrisponde: il file potrebbe essere cambiato",
+    "hunkFailed": "Patch parzialmente fallita: il contenuto è cambiato",
+    "permissionDenied": "Impossibile modificare il file: verificare i permessi"
+  },
+  "generic": {
+    "permissionDenied": "Accesso limitato: controlla i permessi e riprova",
+    "notFound": "Destinazione non trovata: verificare il percorso e riprovare",
+    "alreadyExists": "Il target esiste gixE0: scegli un nome diverso",
+    "invalid": "Operazione non riuscita: controllare i parametri e riprovare",
+    "unsuccessful": "Operazione non riuscita: regolazione dell'approccio"
+  },
+  "rewindFailed": "Errore: impossibile preparare la sessione di riavvolgimento.",
+  "skillSessionFailed": "Errore: impossibile creare la sessione abilitxE0",
+  "requestAborted": "Errore: la richiesta è stata interrotta.",
+  "noSessionsFound": "Errore: nessuna sessione trovata nella directory corrente. Utilizza --resume <sessionId> per riprendere una sessione specifica.",
+  "agent": {
+    "errorPrefix": "Errore: {{message}}",
+    "initFailed": "Errore: impossibile inizializzare il client LLM",
+    "overloaded": "Il provider del modello AI upstream è attualmente sovraccarico. Riprova tra poco o cambia modello.",
+    "contentModeration": "Richiesta bloccata dai controlli di sicurezza del fornitore. Modifica la tua richiesta ed evita istruzioni relative ad attivitxE0 informatiche ad alto rischio.",
+    "networkError": "Errore: {{message}}\n\nPotrebbe trattarsi di un problema di rete. Si prega di controllare:\n1. La tua connessione Internet\n2. Eventuali impostazioni firewall o proxy",
+    "networkInfrastructureError": "Impossibile raggiungere {{host}}. Controlla la connessione di rete e riprova.",
+    "networkConnectionError": "Impossibile raggiungere {{host}}. La tua connessione Internet potrebbe essere offline o interrotta. Controlla la connessione di rete e riprova.",
+    "networkFirewallError": "Impossibile raggiungere {{host}}. La rete sembra bloccare la connessione. Verifica con il tuo team IT se utilizzi una rete aziendale.",
+    "networkTlsCertificateError": "Impossibile stabilire una connessione sicura a {{host}}. Potrebbe essere causato da ispezione SSL o da un problema di configurazione del certificato.",
+    "networkEndpointFallback": "l'endpoint del modello AI",
+    "byokError400": "Errore BYOK: {{message}}{{detailSuffix}}\n\nSuggerimenti per la risoluzione dei problemi per i modelli personalizzati:\n1. Verifica che il tipo \"provider\" nella configurazione BYOK corrisponda al tuo endpoint (usa \"openai\" per GPT-4o/GPT-5+/o-series/Codex, \"anthropic\" per Claude, \"generic-chat-completion-api\" per altre API compatibili con OpenAI)\n2. Assicurati che il tuo baseUrl sia raggiungibile e che la chiave API sia valida\n3. Verifica che il nome del modello corrisponda a cixF2 che si aspetta il tuo endpoint",
+    "byokErrorMcpToolSchema": "Errore BYOK: {{message}}{{detailSuffix}}\n\nIl provider del modello ha rifiutato lo schema JSON di uno strumento MCP. Server MCP connessi: {{serverNames}}.\n\nDisabilita un server incompatibile con `/mcp` oppure passa a un modello compatibile con `/model`.",
+    "byokError402": "Errore BYOK: {{errorMessage}}{{detailSuffix}}\n\n Controlla lo stato della fatturazione con il fornitore del modello BYOK.",
+    "byokErrorGeneric": "Errore BYOK: {{message}}{{detailSuffix}}\n\nSe il problema persiste, verifica la configurazione del modello personalizzato nelle impostazioni.",
+    "apiValidationErrorSpecific": "Errore di convalida API: {{detail}}\n\nIn genere significa che c'è un problema con la struttura della cronologia delle conversazioni. CixF2 puxF2 verificarsi quando i risultati dello strumento non corrispondono alle chiamate dello strumento corrispondenti. Segnala questo errore con /bug.",
+    "apiValidationErrorGeneric": "Errore di convalida API: {{message}}\n\nSi è verificato un problema con il formato della richiesta.  Segnala questo errore con /bug.",
+    "tokenLimitReachedDetail": "{{detail}}\nEsegui `/limits` per gestire le tue preferenze.",
+    "toolExecutionError": "Errore: {{message}}",
+    "compactFailed": "Errore: impossibile compattare e avviare una nuova sessione.\n\n{{detail}}",
+    "sessionNotFound": "Errore: Sessione non trovata: {{sessionId}}",
+    "warningSessionDir": "Avviso: impossibile passare alla directory della sessione: {{dir}}",
+    "warningPromptIgnored": "Avviso: richiesta iniziale ignorata alla ripresa della sessione.",
+    "authError": "Errore: {{message}}",
+    "invalidModel": "Modello non valido: {{input}}\n\nModelli integrati disponibili:\n {{builtIn}}\n\nModelli personalizzati disponibili:\n {{custom}}\n\nNota: i modelli personalizzati vengono caricati da ~/.industry/settings.json",
+    "invalidModelNoCustom": "Modello non valido: {{input}}\n\nModelli integrati disponibili:\n {{builtIn}}\n\nNessun modello personalizzato configurato. Aggiungili a ~/.industry/settings.json",
+    "modelsNone": "Nessuno",
+    "byokOpenAIMismatch": "Il tuo modello personalizzato \"{{model}}\" sembra essere un modello OpenAI, ma è configurato con il provider \"{{provider}}\". Per i modelli GPT-5+, GPT-4o, o-series e Codex, utilizzare \"provider\": \"openai\" (API di risposta). Vedi https://docs.example.com/cli/byok/overview per i dettagli.",
+    "byokAnthropicMismatch": "Il tuo modello personalizzato \"{{model}}\" sembra essere un modello Claude/Anthropic, ma è configurato con il provider \"{{provider}}\". Per i modelli Claude (Haiku, Sonnet, Opus), utilizzare \"provider\": \"anthropic\". Vedi https://docs.example.com/cli/byok/overview per i dettagli."
+  }
+}

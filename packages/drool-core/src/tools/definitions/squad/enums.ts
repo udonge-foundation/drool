@@ -1,0 +1,16 @@
+export enum SquadBoardOperation {
+  CreateChannel = 'create-channel',
+  ListChannels = 'list-channels',
+  PostMessage = 'post-message',
+  ReadChannel = 'read-channel',
+  SendDm = 'send-dm',
+  ReadDms = 'read-dms',
+  ListDmConversations = 'list-dm-conversations',
+  ReplyThread = 'reply-thread',
+  ReadThread = 'read-thread',
+  ReadNotifications = 'read-notifications',
+  WaitForNotification = 'wait-for-notification',
+  CreateLane = 'create-lane',
+  ClaimLane = 'claim-lane',
+  ListLanes = 'list-lanes',
+}

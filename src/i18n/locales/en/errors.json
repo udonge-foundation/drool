@@ -1,0 +1,73 @@
+{
+  "operationCancelled": "Operation cancelled",
+  "ls": {
+    "notFound": "Directory not accessible - check path and try again",
+    "permissionDenied": "Access restricted - check permissions",
+    "notADirectory": "Path is not a directory - verify target",
+    "invalid": "Invalid path format - use absolute paths",
+    "noSuchFile": "Directory not found - verify path exists"
+  },
+  "create": {
+    "alreadyExists": "File already exists - use Edit tool to modify",
+    "permissionDenied": "Cannot create file - check directory permissions",
+    "noSuchFileOrDirectory": "Invalid path - check parent directory exists",
+    "isADirectory": "Target is a directory - specify a file path",
+    "readOnly": "File system is read-only - check permissions"
+  },
+  "edit": {
+    "textNotFound": "Text pattern not found - verify exact match",
+    "notFound": "File not found - check path or create it first",
+    "noMatchFound": "Text pattern not found - verify exact match",
+    "multipleMatches": "Multiple matches found - make pattern more specific",
+    "permissionDenied": "Cannot modify file - check permissions",
+    "isADirectory": "Target is a directory - edit files only"
+  },
+  "applyPatch": {
+    "invalidPatch": "Invalid patch format - check syntax",
+    "fileNotFound": "Target file not found - verify path",
+    "patchFailed": "Patch doesn't match - file may have changed",
+    "hunkFailed": "Patch partially failed - content has changed",
+    "permissionDenied": "Cannot modify file - check permissions"
+  },
+  "generic": {
+    "permissionDenied": "Access restricted - check permissions and try again",
+    "notFound": "Target not found - verify path and try again",
+    "alreadyExists": "Target already exists - choose a different name",
+    "invalid": "Operation failed - check parameters and try again",
+    "unsuccessful": "Operation unsuccessful - adjusting approach"
+  },
+  "rewindFailed": "Error: Failed to prepare rewind session.",
+  "skillSessionFailed": "Error: Failed to create skill session",
+  "requestAborted": "Error: Request was aborted.",
+  "noSessionsFound": "Error: No sessions found in current directory. Use --resume <sessionId> to resume a specific session.",
+  "agent": {
+    "errorPrefix": "Error: {{message}}",
+    "initFailed": "Error: Failed to initialize LLM client",
+    "overloaded": "The upstream AI model provider is currently overloaded. Please retry in a moment or switch models.",
+    "contentModeration": "Request blocked by provider safety checks. Please modify your request and avoid high-risk cyber activity instructions.",
+    "networkError": "Error: {{message}}\n\nThis might be a network issue. Please check:\n1. Your internet connection\n2. Any firewall or proxy settings",
+    "networkInfrastructureError": "Unable to reach {{host}}. Check your network connection and try again.",
+    "networkConnectionError": "Unable to reach {{host}}. Your internet connection may be offline or interrupted. Check your network connection and try again.",
+    "networkFirewallError": "Unable to reach {{host}}. Your network appears to be blocking the connection. Check with your IT team if you're on a corporate network.",
+    "networkTlsCertificateError": "Unable to establish a secure connection to {{host}}. This may be caused by SSL inspection or a certificate configuration issue.",
+    "networkEndpointFallback": "the AI model endpoint",
+    "byokError400": "BYOK Error: {{message}}{{detailSuffix}}\n\nTroubleshooting tips for custom models:\n1. Verify the \"provider\" type in your BYOK config matches your endpoint (use \"openai\" for GPT-4o/GPT-5+/o-series/Codex, \"anthropic\" for Claude, \"generic-chat-completion-api\" for other OpenAI-compatible APIs)\n2. Ensure your baseUrl is reachable and the API key is valid\n3. Check that the model name matches what your endpoint expects",
+    "byokErrorMcpToolSchema": "BYOK Error: {{message}}{{detailSuffix}}\n\nYour model provider rejected an MCP tool's JSON Schema. Connected MCP servers: {{serverNames}}.\n\nDisable an incompatible server with `/mcp`, or switch to a compatible model with `/model`.",
+    "byokError402": "BYOK Error: {{errorMessage}}{{detailSuffix}}\n\n Please check your billing status with your BYOK model provider.",
+    "byokErrorGeneric": "BYOK Error: {{message}}{{detailSuffix}}\n\nIf this persists, verify your custom model configuration in settings.",
+    "apiValidationErrorSpecific": "API Validation Error: {{detail}}\n\nThis usually means there's an issue with the conversation history structure. This can happen when tool results don't match their corresponding tool calls. Please report this error with /bug.",
+    "apiValidationErrorGeneric": "API Validation Error: {{message}}\n\nThere was a problem with the request format.  Please report this error with /bug.",
+    "tokenLimitReachedDetail": "{{detail}}\nRun `/limits` to manage your preferences.",
+    "toolExecutionError": "Error: {{message}}",
+    "compactFailed": "Error: Failed to compact and start a new session.\n\n{{detail}}",
+    "sessionNotFound": "Error: Session not found: {{sessionId}}",
+    "warningSessionDir": "Warning: Could not change to session directory: {{dir}}",
+    "warningPromptIgnored": "Warning: Initial prompt ignored when resuming session.",
+    "authError": "Error: {{message}}",
+    "invalidModel": "Invalid model: {{input}}\n\nAvailable built-in models:\n  {{builtIn}}\n\nAvailable custom models:\n  {{custom}}\n\nNote: Custom models are loaded from ~/.industry/settings.json",
+    "invalidModelNoCustom": "Invalid model: {{input}}\n\nAvailable built-in models:\n  {{builtIn}}\n\nNo custom models configured. Add them to ~/.industry/settings.json",
+    "modelsNone": "None",
+    "byokOpenAIMismatch": "Your custom model \"{{model}}\" appears to be an OpenAI model, but is configured with provider \"{{provider}}\". For GPT-5+, GPT-4o, o-series, and Codex models, use \"provider\": \"openai\" (Responses API). See https://docs.example.com/cli/byok/overview for details.",
+    "byokAnthropicMismatch": "Your custom model \"{{model}}\" appears to be a Claude/Anthropic model, but is configured with provider \"{{provider}}\". For Claude models (Haiku, Sonnet, Opus), use \"provider\": \"anthropic\". See https://docs.example.com/cli/byok/overview for details."
+  }
+}
