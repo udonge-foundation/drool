@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "bun build ./src/index.ts --target=bun --packages external --outdir ./dist",
-    "build:debug": "node ./scripts/build.mjs",
-    "build:release": "node ./scripts/build.mjs --release"
+    "build:debug": "bun ./scripts/build.mjs",
+    "build:release": "bun ./scripts/build.mjs --release"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "*",
