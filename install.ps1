@@ -23,7 +23,7 @@ try {
   Write-Host "Downloading $Url"
   Invoke-WebRequest -Uri $Url -OutFile $TempBin -UseBasicParsing
 
-  Move-Item -Path $TempBin -Destination $InstallPath -Force
+  Copy-Item -Path $TempBin -Destination $InstallPath -Force
   Write-Host "Installed drool to $InstallPath"
 
   $PathSeparator = [IO.Path]::PathSeparator
