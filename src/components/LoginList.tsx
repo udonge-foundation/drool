@@ -1,5 +1,3 @@
-﻿import { spawn } from 'child_process';
-
 import { Box, Text } from 'ink';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,9 +11,9 @@ import {
 } from '@industry/runtime/auth';
 
 import { COLORS } from '@/components/chat/themedColors';
+import { ByokProviderWizard } from '@/components/ByokProviderWizard';
 import { useKeypressHandler } from '@/hooks/useKeypressHandler';
 import { installCodingSubscriptionModels } from '@/services/coding-subs/modelInstall';
-import { getSettingsService } from '@/services/SettingsService';
 import { openBrowser } from '@/utils/openBrowser';
 
 interface LoginListProps {
@@ -27,6 +25,7 @@ interface LoginListProps {
 
 type LoginState =
   | 'options'
+  | 'byok'
   | 'authenticating'
   | 'waiting_for_browser'
   | 'error';
@@ -156,33 +155,14 @@ export function LoginList({
     }
   };
 
-  const openByokSettings = () => {
+  const openByokWizard = () => {
     if (onContinueWithApiKey) {
       onContinueWithApiKey();
       onClose();
       return;
     }
-
-    const settingsPath = getSettingsService().getSettingsFilePath();
-    const platform = process.platform;
-    const command =
-      platform === 'darwin' ? 'open' : platform === 'win32' ? 'cmd' : 'xdg-open';
-    const args =
-      platform === 'win32'
-        ? ['/c', 'start', '""', settingsPath]
-        : [settingsPath];
-
-    try {
-      spawn(command, args, { detached: true, stdio: 'ignore' }).unref();
-      setByokMessage(
-        `Opened settings file. Add BYOK models under general.customModels: ${settingsPath}`
-      );
-    } catch (error) {
-      logException(error, 'Failed to open BYOK settings file');
-      setByokMessage(
-        `Add BYOK models under general.customModels in ${settingsPath}`
-      );
-    }
+    setByokMessage('');
+    setState('byok');
   };
 
   const codingSubscriptionOptions: CodingSubscriptionLoginOption[] = [
@@ -231,7 +211,7 @@ export function LoginList({
             id: 'api-key',
             label: 'Add BYOK / Custom provider',
             value: '',
-            action: openByokSettings,
+            action: openByokWizard,
             disabled: false,
           },
           ...codingSubscriptionOptions.map((option) => ({
@@ -257,6 +237,10 @@ export function LoginList({
 
   useKeypressHandler(
     (_input, key) => {
+      if (state === 'byok') {
+        return false;
+      }
+
       if (key.escape) {
         abortControllerRef.current?.abort();
         void flowRef.current?.return(undefined);
@@ -312,6 +296,22 @@ export function LoginList({
       marginTop={1}
     >
       <Box flexDirection="column">
+        {state === 'byok' && (
+          <ByokProviderWizard
+            onCancel={() => {
+              setState('options');
+            }}
+            onSaved={(displayName, warning) => {
+              setByokMessage(
+                warning
+                  ? `Added ${displayName}. ${warning}`
+                  : `Added ${displayName}. Select it with /model.`
+              );
+              setState('options');
+            }}
+          />
+        )}
+
         {state === 'authenticating' && (
           <Text color={COLORS.text.muted}>{t('common:login.initiating')}</Text>
         )}
@@ -382,15 +382,17 @@ export function LoginList({
           </Box>
         )}
 
-        <Box marginTop={1}>
-          <Text color={COLORS.text.muted}>
-            {state === 'options'
-              ? t('common:login.navigationAuth')
-              : state === 'waiting_for_browser'
-                ? t('common:login.navigationWaiting')
-                : t('common:login.navigationDefault')}
-          </Text>
-        </Box>
+        {state !== 'byok' && (
+          <Box marginTop={1}>
+            <Text color={COLORS.text.muted}>
+              {state === 'options'
+                ? t('common:login.navigationAuth')
+                : state === 'waiting_for_browser'
+                  ? t('common:login.navigationWaiting')
+                  : t('common:login.navigationDefault')}
+            </Text>
+          </Box>
+        )}
       </Box>
     </Box>
   );

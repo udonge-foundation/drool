@@ -261,6 +261,29 @@ class SettingsService implements SettingsLike {
     return this.customModels;
   }
 
+  public async addCustomModel(customModel: CustomModel): Promise<CustomModel[]> {
+    const next = [
+      ...this.customModels,
+      {
+        ...customModel,
+        index: customModel.index ?? this.customModels.length,
+      },
+    ];
+
+    this.customModels = next;
+    this.settings = {
+      ...this.settings,
+      general: {
+        ...this.settings.general,
+        customModels: next,
+      },
+    };
+
+    await this.persistSettings({ general: { customModels: next } });
+    this.notifyModelListeners();
+    return next;
+  }
+
   /**
    * Get the frozen settings resolution chain from initial load.
    * Used by /settings-debug to show how each setting was resolved.
