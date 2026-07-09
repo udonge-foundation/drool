@@ -190,12 +190,6 @@ async function detectTerminal(): Promise<SupportedTerminal | null> {
     return SupportedTerminal.MacosTerminal;
   }
 
-  // PowerShell detection (Windows)
-  // Check for PSModulePath which is unique to PowerShell
-  if (process.env.PSModulePath && process.platform === 'win32') {
-    return SupportedTerminal.Powershell;
-  }
-
   // Parent process name check (non-Windows)
   if (os.platform() !== 'win32') {
     try {
@@ -215,6 +209,10 @@ async function detectTerminal(): Promise<SupportedTerminal | null> {
   // Windows Terminal detection (WT_SESSION/WT_PROFILE_ID env vars)
   if (process.env.WT_SESSION || process.env.WT_PROFILE_ID) {
     return SupportedTerminal.WindowsTerminal;
+  }
+
+  if (process.env.PSModulePath && process.platform === 'win32') {
+    return SupportedTerminal.Powershell;
   }
 
   return null;

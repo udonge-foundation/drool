@@ -647,6 +647,7 @@ export function ChatInput({
     filteredCommands,
     availableCommands,
     isBashMode,
+    isSessionRunning,
     enableQueuedMessages,
     onBashSubmit,
     onModeToggle,

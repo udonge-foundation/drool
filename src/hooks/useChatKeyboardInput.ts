@@ -187,6 +187,7 @@ export function useChatKeyboardInput({
   filteredCommands = [],
   availableCommands = filteredCommands,
   isBashMode = false,
+  isSessionRunning = false,
   enableQueuedMessages = false,
   onBashSubmit,
   onModeToggle,
@@ -1924,8 +1925,13 @@ export function useChatKeyboardInput({
           return true;
         }
 
-        if (key.shift) {
-          // Shift+Enter: add newline at cursor position
+        const isEndOfLoopSubmit =
+          enableQueuedMessages &&
+          isSessionRunning &&
+          matchKeyboardChord({ key, input: '' }, 'ctrl-enter');
+
+        if (key.shift || (key.ctrl && !isEndOfLoopSubmit)) {
+          // Modified Enter: add newline at cursor position
           const currentInput = inputRef.current;
           const currentCursorPos = cursorPositionRef.current;
           const before = currentInput.substring(0, currentCursorPos);
@@ -1946,9 +1952,6 @@ export function useChatKeyboardInput({
           const currentCursorPos = cursorPositionRef.current;
           const before = currentInput.substring(0, currentCursorPos);
           const after = currentInput.substring(currentCursorPos);
-          const isEndOfLoopSubmit =
-            enableQueuedMessages &&
-            matchKeyboardChord({ key, input: '' }, 'ctrl-enter');
           if (!isEndOfLoopSubmit && before.endsWith('\\')) {
             const newBefore = before.slice(0, -1);
             const newInput = `${newBefore}\n${after}`;
@@ -2033,6 +2036,7 @@ export function useChatKeyboardInput({
       onBashSubmit,
       isBashMode,
       enableQueuedMessages,
+      isSessionRunning,
       setInput,
       setCursorPosition,
       updateSuggestions,
