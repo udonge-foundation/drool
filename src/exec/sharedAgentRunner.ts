@@ -419,25 +419,23 @@ export async function runAgentWithSession(
 
     // Extract final text (same logic as renderlessExecRunner)
     let finalText = '';
-    const texts: string[] = [];
     for (const e of events) {
       if (e.message.role !== 'assistant') continue;
       const c = e.message.content as unknown;
       if (typeof c === 'string') {
         const t = c.trim();
-        if (t) texts.push(t);
+        if (t) finalText = t;
         continue;
       }
       if (Array.isArray(c)) {
-        for (const block of c as Array<{ type?: string; text?: string }>) {
-          if (block?.type === 'text' && block.text) {
-            const t = block.text.trim();
-            if (t) texts.push(t);
-          }
-        }
+        const messageText = (c as Array<{ type?: string; text?: string }>)
+          .filter((block) => block?.type === 'text' && block.text)
+          .map((block) => block.text)
+          .join('')
+          .trim();
+        if (messageText) finalText = messageText;
       }
     }
-    finalText = texts.length ? texts[texts.length - 1] : '';
 
     const numTurns = events.filter(
       (e) => e.message.role === 'assistant'

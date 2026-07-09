@@ -41,25 +41,25 @@ import { generateUUID } from '@/utils/uuid';
 import type { MessageVisibility } from '@industry/drool-sdk-ext/protocol/sessionV2';
 
 function extractAssistantFinalText(events: DroolMessageEvent[]): string {
-  const texts: string[] = [];
+  let finalText = '';
   for (const e of events) {
     if (e.message.role !== 'assistant') continue;
     const c = e.message.content as unknown;
     if (typeof c === 'string') {
       const t = c.trim();
-      if (t) texts.push(t);
+      if (t) finalText = t;
       continue;
     }
     if (Array.isArray(c)) {
-      for (const block of c as Array<{ type?: string; text?: string }>) {
-        if (block?.type === 'text' && block.text) {
-          const t = block.text.trim();
-          if (t) texts.push(t);
-        }
-      }
+      const messageText = (c as Array<{ type?: string; text?: string }>)
+        .filter((block) => block?.type === 'text' && block.text)
+        .map((block) => block.text)
+        .join('')
+        .trim();
+      if (messageText) finalText = messageText;
     }
   }
-  return texts.length ? texts[texts.length - 1] : '';
+  return finalText;
 }
 
 function countAssistantTurns(events: DroolMessageEvent[]): number {
